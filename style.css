@@ -54,6 +54,20 @@ body {
   color: #f26667;
 }
 
+#header .icons{
+  width: 25%;
+    padding: 0px;
+  /* margin: 5px; */
+}
+
+#header .icons img, a{
+  padding: 0px;
+}
+
+#header .nav-link .icon-btn{
+  height: 25px;
+}
+
 #header .navbar-toggler {
   padding: 1px 5px;
   font-size: 18px;
@@ -256,6 +270,7 @@ button {
   position: absolute;
   z-index: 2;
   display: none;
+  color: 
 }
 
 #direction-sect .card-icons-item {
@@ -264,7 +279,7 @@ button {
   border-radius: 50px !important;
   padding: 5px 9px !important;
   margin: 3px !important;
-  color: #6f6e6e !important;
+  color: #6f6e6e;
   transition: 0.5s;
 }
 
@@ -273,6 +288,10 @@ button {
   color: #fffdfc !important;
 }
 
+
+#direction-sect .card-icons-item a:hover{
+  color: #ffffff;
+}
 #shopnow-btn {
   border: 2px solid #f46967 !important;
   border-radius: 6px;
