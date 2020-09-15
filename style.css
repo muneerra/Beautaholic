@@ -54,6 +54,8 @@ body {
   color: #f26667;
 }
 
+
+
 #header .icons{
   width: 25%;
     padding: 0px;
@@ -125,7 +127,7 @@ body {
   line-height: 1.9;
 }
 
-@media only screen and (max-width: 850px) and (min-width:350px){
+@media only screen and (max-width: 850px) and (min-width:576px){
 #header .carousel-caption{
   display: flex;
   bottom:0;
@@ -270,7 +272,7 @@ button {
   position: absolute;
   z-index: 2;
   display: none;
-  color: 
+  /* color:  */
 }
 
 #direction-sect .card-icons-item {
@@ -595,6 +597,7 @@ text-align: center;
 #footer {
   padding: 30px 0;
   background: #1d1d1d !important;
+  display: grid;
 }
 
 /* #footer .section-title {
@@ -604,17 +607,26 @@ text-align: center;
 	/* text-transform: uppercase;
 } */ 
 
-#footer .footer-section{
+/* #footer #footer-sect{
   margin: 0px;
-}
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+/* #footer .footer-logo{ */
+  /* width: 75%; */
+  /* width: fit-content; */
+  /* text-align: left;
+  display: grid;
+} */
 
 #footer .footer-logo{
-  width: fit-content;
-  text-align: left;
+  max-width: 180px;
 }
 
-#footer .footer-logo .footer-logo-white{
-  /* width: fit-content; */
+#footer .footer-logo .footer-logo-white{ 
+ /* width: fit-content; */
+ max-width: 150px;
   text-align: left;
 }
 
@@ -656,7 +668,8 @@ text-align: center;
 
 #footer ul.social li:hover a i {
 	font-size: 30px;
-	margin-top: -10px;
+  margin-top: -10px;
+  color: #f9c0cb;
 }
 
 #footer ul.social li a, #footer ul.quick-links li a {
@@ -688,32 +701,18 @@ text-align: center;
 	font-weight: 700;
 }
 
-@media (max-width:576px) and (min-width: 350px) {
-
-  #footer .about-text{
-    display: none;
-  }
-
-  #footer .footer-details{
-    float: left;
-  }
-
+@media only screen and (max-width: 576px) {
+ 
 	#footer h5 {
     padding-left: 0;
     padding-left: 10px;
+    border-left: none;
 		border-left: transparent;
 		padding-bottom: 0px;
-		margin-bottom: 10px;
+    margin-bottom: 10px;
   }
-/* 
-  .mt-sm-5{
-    margin-top: 5px;
-  } */
-  
-  /* #footer p{
-    display: none;
-  } */
 }
+
 
 /* _____________________________________________________________ */
 
@@ -1000,4 +999,120 @@ text-align: center;
   font-size: 20px;
     font-weight: 600;
   text-align: left;
+}
+
+/* Login/Sign Up */
+
+#login-form input.form-control:focus ~ label {
+  color: var(--main-color) !important;
+}
+
+/* #login-form .bg-main {
+  background-color: var(--main-color);
+}
+
+#login-form a:hover {
+  color: var(--main-color) !important;
+} */
+
+#login-form .bg-image {
+  background-image: url("images/login-form.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* height: 100%; */
+  width: 100%;
+}
+
+/* Makes the label go above the input so it can be styled*/
+#login-form .form-group {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#login-form .form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* Changes the inputs to be underlined */
+#login-form input:not([type="submit"]) {
+  outline: 0 !important;
+  border-width: 0 0 1.5px !important;
+  border-color: lightgrey !important;
+  color: black;
+}
+
+#login-form .text-black,
+#login-form .text-black:hover {
+  color: black;
+}
+
+/* Changes the hover color of the sign in/up button*/
+/* #login-form button.btn-dark:hover {
+  background-color: var(--main-color) !important;
+} */
+
+/* Removes the blue outline from buttons*/
+/* #login-form button {
+  outline: none !important;
+  box-shadow: none !important;
+} */
+
+#login-form button {
+  border: 2px solid #f46967 !important;
+  border-radius: 6px;
+  font-size: 11px !important;
+  padding: 1px 13px !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 50px;
+  color: #f46967;
+  font-size: 16px;
+  background-color: #fffdfc !important;
+  transition: 0.5s;
+}
+#login-form button:hover {
+  background-color: #f46967 !important;
+  color: #fffdfc;
+  transition: 0.5s;
+}
+
+/* Makes Carsoul indicators round */
+#login-form .carousel-indicators.round li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+
+/* MAKES CAROUSEL SLIDE UP AND DOWN */
+
+#login-form .vert .carousel-item-next.carousel-item-left,
+#login-form .vert .carousel-item-prev.carousel-item-right {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+#login-form .vert .carousel-item-next,
+#login-form .vert .active.carousel-item-right {
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100% 0);
+}
+
+#login-form .vert .carousel-item-prev,
+#login-form .vert .active.carousel-item-left {
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+}
+
+@media only screen and (max-width: 576px) {
+ 
+	#footer h5 {
+    padding-left: 0;
+    padding-left: 10px;
+    border-left: none;
+		border-left: transparent;
+		padding-bottom: 0px;
+    margin-bottom: 10px;
+  }
 }
