@@ -209,32 +209,10 @@ body {
   padding-top: 50px;
   padding-bottom: 50px;
 }
-/* 
-#direction-sect .social{
-  display:flex;
-  list-style-type: none;
-}
 
-#direction-sect .social li a{
-  color:#fff;
-  background-color:#333;
-  font-size:16px;
-  line-height:40px;
-  text-align:center;
-  height:40px;
-  width:40px;
-  margin:0 2px;
-  display:block;
-  position:relative;
-  border-radius: ;
-  transition:all .3s ease-in-out;
-}
 
-#direction-sect .social li a:hover{
-  color:#fff;
-  background-color:#ef5777;
-} */
-img {
+
+#direction-sect img {
   width: 100%;
   height: auto;
   transition: 0.5s;
@@ -242,6 +220,7 @@ img {
 #direction-sect .container {
   Overflow: hidden;
   margin-top: 50px;
+  
 }
 #direction-sect .cards-wrap {
   align-items: center;
@@ -251,13 +230,12 @@ img {
   color: #f46967;
   font-size: 10px;
   border-radius: 100px;
+  /* height: 40%; */
 }
-h6 {
+#direction-sect h6 {
   color: #f46967;
 }
-button {
-  color: #f46967;
-}
+
 
 #direction-sect a{
   text-decoration: none;
@@ -273,9 +251,11 @@ button {
   color: #f46967;
 }
 #direction-sect .card-body {
+  height: 470px;
+  width: 400px;
   margin: 20px;
   padding: 5px 5px 20px 5px !important;
-  transition: 0.2s;
+  transition: 0.2s ease-in;
   border: 2px solid #e6e5e5;
   box-shadow: 4px 4px 0px #e6e5e57a;
   background-color: #fffdfc;
@@ -283,12 +263,12 @@ button {
 
 #direction-sect .card-body:hover {
   border: 2px solid #ef5777;
-  transition: 0.2s;
+  transition: 0.2s ease-in;
 }
 
 #direction-sect .card-body:hover img {
   filter: brightness(75%);
-  transition: 0.5s;
+  transition: 0.2s ease-in;
 }
 #direction-sect .card-body:hover .card-icons {
   display: block;
@@ -298,6 +278,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* height: 50%; */
 }
 #direction-sect .card-icons {
   position: absolute;
@@ -313,7 +294,7 @@ button {
   padding: 5px 9px !important;
   margin: 3px !important;
   color: #6f6e6e;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
 #direction-sect .card-icons-item:hover {
@@ -321,27 +302,53 @@ button {
   color: #fffdfc !important;
 }
 
+#direction-sect .price{
+  color:#f5919d;
+  font-size:14px;
+  font-weight:700;
+  /* letter-spacing:.6px; */
+  margin-bottom:8px;
+  text-align:center;
+  transition:all .3s;
+}
 
 #direction-sect .card-icons-item a:hover{
   color: #ffffff;
 }
-#shopnow-btn {
-  border: 2px solid #f46967 !important;
-  border-radius: 6px;
-  font-size: 11px !important;
-  padding: 1px 13px !important;
-  font-weight: bold;
-  text-transform: uppercase;
-  background-color: #fffdfc !important;
-  transition: 0.5s;
+#direction-sect button{
+  border: 2px solid #f26667 !important;
 }
-#shopnow-btn:hover {
-  background-color: #f46967 !important;
-  color: #fffdfc;
-  transition: 0.5s;
+
+#direction-sect #shopnow-btn{
+  color: #f26667;
+  text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    width: 45%;
+    padding: 6px 10px;
+    margin: 0 auto;
+    border: 2px solid #f26667 !important;
+    background-color: transparent;
+    display: block;
+    position: relative;
+    z-index: 1;
+    transition: all 0.2s;
 }
+#direction-sect #shopnow-btn:hover,
+#direction-sect #shopnow-btn:focus{
+  color: #fff;
+  background: #f26667;
+  border: 2px solid #f26667 !important;
+}
+
+/* #direction-sect #shopnow-btn:active{
+    color:  #f26667;
+    border: 2px solid #f26667;
+    background-color: transparent;
+} */
+
 #direction-sect .card-heading {
-  font-size: 20px !important;
+  font-size: 18px !important;
   font-weight: bold;
 }
 #direction-sect .card-details {
@@ -361,11 +368,20 @@ button {
   color:rgba(0,0,0,.2);
 }
 
-
-@media only screen and (max-width: 850px) and (min-width:350px){
+/* @media only screen and (min-width: 576px){
   #direction-sect .card-body {
     margin: 0px 20px;
     margin-bottom: 30px;
+    height: auto ;
+  }
+}
+ */
+
+@media only screen and (min-width: 770px) and (min-width:350px){
+  #direction-sect .card-body {
+    margin: 0px 20px;
+    margin-bottom: 30px;
+    height: auto ;
   }
 }
 
@@ -915,7 +931,7 @@ text-align: center;
   margin: 0px 0px;
 	width: 34px;
     height: 34px;
-    background: #212529;
+    background: #7e7e7e;
     text-align: center;
     font-size: 19px;
     line-height: 36px;
@@ -929,23 +945,24 @@ text-align: center;
 	border-radius: 0 3px 3px 0; 
 }
 #product-desc .product-count .qty {
+  color:#7e7e7e;
 	width: 60px;
 	text-align: center;
 }
-#product-desc .round-black-btn {
+#product-desc .round-btn {
 	border-radius: 4px;
-    background: #212529;
-    color: #fff;
+    background: #fff;
+    color: #f26667;;
     padding: 7px 45px;
     display: inline-block;
     margin-top: 20px;
-    border: solid 2px #212529; 
-    transition: all 0.5s ease-in-out 0s;
+    border: solid 2px #f26667;; 
+    transition: all 0.2s ease-in-out 0s;
 }
-#product-desc .round-black-btn:hover,
-#product-desc .round-black-btn:focus {
-	background: transparent;
-	color: #212529;
+#product-desc .round-btn:hover,
+#product-desc .round-btn:focus {
+	background: #f26667;;
+	color: #fff;
 	text-decoration: none;
 }
 
@@ -1079,16 +1096,7 @@ text-align: center;
   color: black;
 }
 
-/* Changes the hover color of the sign in/up button*/
-/* #login-form button.btn-dark:hover {
-  background-color: var(--main-color) !important;
-} */
 
-/* Removes the blue outline from buttons*/
-/* #login-form button {
-  outline: none !important;
-  box-shadow: none !important;
-} */
 
 #login-form button {
   border: 2px solid #f46967 !important;
