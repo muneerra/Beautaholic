@@ -1,5 +1,6 @@
 *{
     margin: 0px auto;
+    font-family: 'Montserrat';
 }
 
 body {
@@ -25,10 +26,10 @@ body {
   letter-spacing: 2px;
 }
 
-#header .navbar-brand{
+/* #header .navbar-brand{
   margin-left: 5px;
-  /* margin-right: 0px; */
-}
+   margin-right: 0px;
+} */
 
 #header .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
   color: #f26667;
@@ -47,7 +48,7 @@ body {
 }
 
 #header .nav-link {
-  padding: .2rem 1rem;
+  padding: .1rem 1rem;
 }
 
 #header .nav-link.active,.nav-link:focus{
@@ -70,11 +71,11 @@ body {
   height: 25px;
 }
 
-#header .navbar-toggler {
-  padding: 1px 5px;
-  font-size: 18px;
+/* #header .navbar-toggler {
+  /* padding: 1px 5px; */
+  /* font-size: 18px;
   line-height: 0.3;
-}
+} */ 
 
 #header .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
   color: #f26667;
@@ -90,7 +91,7 @@ body {
 /*-----Carousel-------*/
 #header .carousel-item {
   /* height: 100vh; */
-  min-height: 300px;
+  /* min-height: 300px; */
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -117,7 +118,7 @@ body {
   color: #464646;
   text-transform: uppercase;
   letter-spacing: 2px;
-  /* margin-top: 25px; */
+  margin-top: 3%;
 }
 
 #header .carousel-caption .pink-heading {
@@ -127,7 +128,7 @@ body {
   line-height: 1.9;
 }
 
-@media only screen and (max-width: 850px)  and (min-width:350px){
+@media only screen and (max-width: 850px)  and (min-width:300px){
 
   #header .fixed-top {
     position: relative;
@@ -148,7 +149,7 @@ body {
     color: #464646;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-top: 25px;
+    margin-top: 5%;
     }
     #header .carousel-caption .pink-heading {
       width: 75%;
@@ -215,7 +216,7 @@ body {
 #direction-sect img {
   width: 100%;
   height: auto;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 #direction-sect .container {
   Overflow: hidden;
@@ -251,8 +252,8 @@ body {
   color: #f46967;
 }
 #direction-sect .card-body {
-/*   height: 470px; */
-  width: 400px;
+  /* height: 470px; */
+  /* width: 400px; */
   margin: 20px;
   padding: 5px 5px 20px 5px !important;
   transition: 0.2s ease-in;
@@ -795,6 +796,8 @@ text-align: center;
 	min-width: 80px;
 	background-size: 100%;
 }
+
+
 #product-desc .carousel-testimonial .item {
 	padding: 30px 10px;
 }
@@ -834,9 +837,14 @@ text-align: center;
 #product-desc .owl-nav button span {
 	font-size: 45px;
 }
-#product-desc .product-thumb .item img {
-	height: 100px;
+
+#product-desc img{
+  width: 100%;
 }
+/* #product-desc .product-thumb .item img {
+  height: 100px;
+  width: fit-content;
+} */
 #product-desc .product-name {
 	font-size: 22px;
 	font-weight: 500;
@@ -1181,4 +1189,94 @@ text-align: center;
 
 #category-page .main-banner img{
   width: 100%;
+}
+
+/* Cart Page */
+
+#cart-page{
+  padding: 10px 0px;
+  font-size: 14px;
+  background-image: url(images/background-3.jpg);
+}
+
+  #cart-page .pink-heading{
+    font-size: 16px;
+  }
+
+  #cart-page a{
+    color: #323232;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    z-index: 1;
+    transition: all 0.3s;
+}
+
+#cart-page a:hover{
+  color: #f26667;
+  text-decoration: none;
+}
+
+#cart-page .note{
+  color:#323232;
+}
+
+#cart-page .btn{
+  color: #f26667;
+  border: 2px solid #f46967;
+  background-color:transparent;
+}
+
+#cart-page .btn:hover{
+  background-color: #f26667;
+  color: white;
+}
+
+#cart-page .quantity{
+  text-align: right;
+  margin: 0px;
+
+}
+
+#cart-page .qtyminus,
+#cart-page .qtyplus {
+  margin: 0px;
+	width: 34px;
+    height: 34px;
+    background: none;
+    /* text-align: center; */
+    font-size: 19px;
+    /* line-height: 36px; */
+    color:  #7e7e7e;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 2px solid #7e7e7e; 
+    box-shadow: none;
+}
+
+/* #cart-page .qtyminus:hover,
+#cart-page .qtyplus:hover {
+  margin: 0px;
+	width: 34px;
+    height: 34px;
+    background: #7e7e7e;
+    font-size: 19px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 2px solid #7e7e7e; 
+    box-shadow: none;
+} */
+/* #cart-page .qtyminus {
+	border-radius: 3px 0 0 3px; 
+}
+#cart-page .qtyplus {
+	border-radius: 0 3px 3px 0; 
+} */
+#cart-page .qty {
+  color:#7e7e7e;
+  width: 60px;
+  height: 34px;
+  border: 1px solid #7e7e7e;
+	/* text-align: center; */
 }
