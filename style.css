@@ -258,7 +258,7 @@ body {
 #direction-sect .card-body {
   /* height: 470px; */
   /* width: 400px; */
-  margin: 20px;
+  margin: 20px 0px;
   display: inline-block;
   padding: 5px 5px 20px 5px !important;
   transition: 0.2s ease-in;
