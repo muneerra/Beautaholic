@@ -28,9 +28,9 @@ let jsonData = `{
         {
           "c_id": 1,
           "category": "makeup",
-          "name": "BB Cream (Skin Perfector)",
+          "name": "BB Cream",
           "image": "images/products/01.jpg",
-          "desc": "Original - 5 in 1 Daily Moisturizer",
+          "desc": "5 in 1 Daily Moisturizer",
           "type": "all skin type",
           "price": 80,
           "productPageLink": "product-1.html"
