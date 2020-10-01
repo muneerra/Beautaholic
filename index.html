@@ -137,8 +137,9 @@
         <h1 class="page-name">SPECIAL PRODUCTS</h1> -->
     <div class="special-products container">
       <div class="row cards-wrap">
-        <div id="1">
+        <div id="specialproducts">
           
+         
         </div>
         
       </div>
@@ -336,11 +337,77 @@
 
   <script src="js/index.js"></script>
   <!-- <script src="script.js"></script> -->
-  <script src="js/category.js"></script>
+ <!--  <script src="js/category.js"></script> -->
   <!-- <script src="js/cart.js"></script> -->
   <!-- <script src="js/login.js"></script> -->
   
 
+
+
+<script type="text/javascript">
+//====================SPECIAL PRODUCTS ===============//
+
+
+let myJsonData = localStorage.getItem('myJson');
+
+if(myJsonData){
+
+
+
+//==============this will get first item of every category
+var products = '';
+if(myJsonData){
+  var data = JSON.parse(myJsonData);
+  for (let item of data.category) {
+    //console.log(item.subCategory); 
+    for (let category of item.subCategory) {
+       //console.log(category.name);
+        products += `<div class="col-md-3 card-body">
+                  <div class="product2-top card-top">
+                    <div class="overlay card-icons">
+                      <button type="button" class="btn btn-secondary card-icons-item" title="View">
+                        <a href="${category.productPageLink}" data-tip="Quick View"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                      </button>
+                      <button type="button" class="btn btn-secondary card-icons-item" title="Wishlist">
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                      </button>
+                      <button type="button" class="btn btn-secondary card-icons-item" title="Cart">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                      </button>
+                    </div>
+            
+                    <img src="${category.image}" />
+                  </div>
+                  <div class="product-bottom text-center">
+                    <ul class="rating">
+                      <li class="fa fa-star"></li>
+                      <li class="fa fa-star"></li>
+                      <li class="fa fa-star"></li>
+                      <li class="fa fa-star"></li>
+                      <li class="fa fa-star disable"></li>
+                    </ul>
+                    <a href="${category.productPageLink}" data-tip="Quick View"><h4 class="card-heading">${category.name}</h4></a>
+                    <h5 class="card-details">${category.desc}</h5>
+                    <h6 class="card-price">Price:$${category.price}</h6>
+                    <button id="shopnow-btn">Shop Now</button>
+                  </div>
+                </div>`;
+        break;
+    }
+  }
+}
+
+
+document.getElementById('specialproducts').innerHTML = products;
+//==============this will get first item of every category
+
+
+}
+
+//====================SPECIAL PRODUCTS ===============//
+
+
+</script>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
