@@ -256,7 +256,7 @@ body {
 
 #direction-sect a{
   text-decoration: none;
-  color: #f46967;
+  color: #464646;
   text-align: center;
 }
 
@@ -264,9 +264,17 @@ body {
   color: #f46967;
 }
 
-#direction-sect a:hover{
+
+#direction-sect #view-more a{
+  text-decoration: none;
+  color: #464646;
+  text-align: center;
+}
+
+#direction-sect #view-morea:hover{
   color: #f46967;
 }
+
 #direction-sect .card-body {
   /* height: 470px; */
   /* width: 400px; */
