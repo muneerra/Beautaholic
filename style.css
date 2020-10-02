@@ -256,7 +256,7 @@ body {
 
 #direction-sect a{
   text-decoration: none;
-  color: #464646;
+  color: #f26667;
   text-align: center;
 }
 
@@ -265,7 +265,7 @@ body {
 }
 
 #direction-sect a:hover{
-  color: #f46967;
+  color: white;
 }
 #direction-sect .card-body {
   /* height: 470px; */
