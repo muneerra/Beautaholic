@@ -59,9 +59,9 @@
                 <a class="nav-link" href="login.html"><img class="icon-btn" src="images/wishlist.svg"
                     alt="wishlist"></a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item cart">
                 <a class="nav-link" href="cart.html"><img class="icon-btn" src="images/basket.svg"
-                    alt="shopping cart"></a>
+                    alt="shopping cart"><span>0</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="login.html"><img class="icon-btn" src="images/user.svg" alt="user"></a>
@@ -336,8 +336,10 @@
 
 
   <script src="js/index.js"></script>
+  <script src="js/category.js"></script>
+  
   <!-- <script src="script.js"></script> -->
- <!--  <script src="js/category.js"></script> -->
+
   <!-- <script src="js/cart.js"></script> -->
   <!-- <script src="js/login.js"></script> -->
   
@@ -389,7 +391,7 @@ if(myJsonData){
                     <a href="${category.productPageLink}" data-tip="Quick View"><h4 class="card-heading">${category.name}</h4></a>
                     <h5 class="card-details">${category.desc}</h5>
                     <h6 class="card-price">Price:$${category.price}</h6>
-                    <button id="shopnow-btn">Shop Now</button>
+                    <a href="categories.html" onclick="categorySelected('')"><button id="shopnow-btn"><a href="categories.html">View More</button></a>
                   </div>
                 </div>`;
         break;
