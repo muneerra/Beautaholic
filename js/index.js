@@ -85,7 +85,7 @@ let jsonData = `{
         {
           "c_id": 4,
           "category": "skincare",
-          "name": "antiAgingCream",
+          "name": "Anti Aging Cream",
           "image": "images/products/04.jpg",
           "desc": "Age Revive",
           "type": "For aging skin",
@@ -163,5 +163,6 @@ localStorage.setItem('myJson',jsonData);
 
 
 //=========load JSON to LOCAL STORAGE===============//
+
 
 

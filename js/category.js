@@ -16,9 +16,9 @@ var products = '';
 if(myJsonData){
   var data = JSON.parse(myJsonData);
   for (let item of data.category) {
-    //console.log(item.subCategory); 
+    // console.log(item.subCategory); 
     for (let category of item.subCategory) {
-       //console.log(category.name);
+      //  console.log(category.name);
 
        if(mycategory.length > 0){
 
@@ -51,15 +51,12 @@ if (mycategory == category.category) {
                     <a href="${category.productPageLink}" data-tip="Quick View"><h4 class="card-heading">${category.name}</h4></a>
                     <h5 class="card-details">${category.desc}</h5>
                     <h6 class="card-price">Price:$${category.price}</h6>
-                    <button id="shopnow-btn">Shop Now</button>
+                    <button id="shopnow-btn">Add to Cart</button>
                   </div>
                 </div>`;
 
-
 }
-
-         
-
+     
        }else{
 
          products += `<div class="col-md-3 card-body">
@@ -89,7 +86,7 @@ if (mycategory == category.category) {
                     <a href="${category.productPageLink}" data-tip="Quick View"><h4 class="card-heading">${category.name}</h4></a>
                     <h5 class="card-details">${category.desc}</h5>
                     <h6 class="card-price">Price:$${category.price}</h6>
-                    <button id="shopnow-btn">Shop Now</button>
+                    <button id="shopnow-btn">Add to Cart</button>
                   </div>
                 </div>`;
        }
@@ -111,5 +108,47 @@ productcategory.innerHTML = products;
 
 
 
-
 fetchData('');
+
+
+
+let carts = document.querySelectorAll('#shopnow-btn');
+
+for (let i=0; i < carts.length; i++) {
+  carts[i].addEventListener('click', () => {
+      cartNumbers(jsonData[0]);
+  })
+}
+
+function onLoadCartNumbers() {
+  let productNumbers = localStorage.getItem('cartNumbers');
+
+  if (productNumbers) {
+    document.querySelector('.cart span').textContent = productNumbers;
+  }
+}
+
+
+function cartNumbers(product) {
+  console.log("The product clicked is" , product);
+
+  let productNumbers = localStorage.getItem('cartNumbers');
+  // console.log(productNumbers);
+  // console.log(typeof productNumbers);
+
+  productNumbers = parseInt(productNumbers);
+  // console.log(typeof productNumbers);
+
+  if (productNumbers) {
+    localStorage.setItem('cartNumbers', productNumbers + 1);
+    document.querySelector('.cart span').textContent = productNumbers + 1;
+  }
+  
+  else{
+    localStorage.setItem('cartNumbers' , 1);
+    document.querySelector('.cart span').textContent = 1;
+  }
+  
+}
+
+onLoadCartNumbers();
