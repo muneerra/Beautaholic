@@ -38,9 +38,9 @@
           <li class="nav-item">
             <a class="nav-link" href="categories.html">Categories</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="deals.html">Deals</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="blog.html">Blog</a>
           </li>
@@ -58,10 +58,10 @@
           </li>
           <li class="nav-item cart">
             <a class="nav-link" href="cart.html"><img class="icon-btn" src="images/basket.svg"
-                alt="shopping cart"><span>0</span></a>
+                alt="shopping cart"><span id="mycartcount" class="cart"></span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html"><img class="icon-btn" src="images/user.svg" alt="user"></a>
+          <li class="nav-item user">
+            <a class="nav-link" href="login.html"><img class="icon-btn" src="images/no-user.svg" alt="user"></a>
           </li>
         </ul>
       </div>
@@ -84,7 +84,7 @@
         <div class="col-md-6">
           <div id="slider">
             <div class="item">
-              <img src="images/products/01.jpg" />
+              <img src="images/products/03.jpg" />
             </div>
           </div>
 
@@ -95,7 +95,7 @@
 
               <div class="heading">
                 <div class="pink-heading">Beautaholic</div>
-                BB Cream
+                Makeup Remover
               </div>
               <!-- <div class="product-name">Variable Product</div> -->
               <div class="reviews-counter">
@@ -113,13 +113,13 @@
                 </div>
                 <span>3 Reviews</span>
               </div>
-              <div class="product-price-discount"><span>$39.00</span>
+              <div class="product-price-discount"><span>$130</span>
                 <!-- <span class="line-through">$29.00</span> -->
               </div>
             </div>
 
-            <h5>100% Original</h5>
-            <p>Beyond matching skin tone, it fits skin's type.
+            <h5>Effectively removes make-up</h5>
+            <p>Perfect for all skin type.
               <br>
               A natural and flawless-from-every-angle complexion sets the stage for whatever look you're planning to
               rock. With Beautaholic BB cream!</p>
@@ -145,9 +145,21 @@
               <div>
               <label for="size">Quantity</label>
               <form action="#" class="display-flex">
-                <div class="qtyminus">-</div>
+                <!-- <div onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                class="qtyminus">-</div>
                 <input type="text" name="quantity" value="1" class="qty">
-                <div class="qtyplus">+</div>
+                <div onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                class="qtyplus">+</div> -->
+
+                <div class="quantity">
+                  <div class="def-number-input number-input mb-0 w-100 text-center justfy-content-center">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                      class="qtyminus">-</button>
+                    <input class="qty" min="0" name="quantity" value="1" type="number">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                      class="qtyplus">+</button>
+                  </div>
+                  </div>
               </form>
             </div>
               <a href="cart.html" class="round-btn">Add to Cart</a>

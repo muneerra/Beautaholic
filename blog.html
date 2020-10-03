@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Beautaholic</title>
+  <link rel="icon" href="images/fav-icon.png" type="image/gif" sizes="32x32">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
@@ -20,9 +21,9 @@
  <!--Header-->
  <header id="header">
   <!--Main Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#"><img src="images/Beautaholic-logo-2.png"></image></a>
+      <a class="navbar-brand" href="index.html"><img src="images/Beautaholic-logo-2.png"></image></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -39,38 +40,39 @@
           <li class="nav-item">
             <a class="nav-link" href="categories.html">Categories</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="deals.html">Deals</a>
-          </li>
-          <li class="nav-item">
+          </li> -->
+          <li class="nav-item active">
             <a class="nav-link" href="blog.html">Blog</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
-          </ul>
-          <div class="icons">
-          <ul class="navbar-nav ml-auto">
-          <li class="nav-item ">
-            <a class="nav-link active" href="login.html"><img class="icon-btn" src="images/search.svg" alt="search"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html"><img class="icon-btn" src="images/wishlist.svg" alt="wishlist"></a>
-          </li>
-          <li class="nav-item cart">
-            <a class="nav-link" href="cart.html"><img class="icon-btn" src="images/basket.svg"
-                alt="shopping cart"><span>0</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html"><img class="icon-btn" src="images/user.svg" alt="user"></a>
-          </li>
         </ul>
-      </div>
+
+        <div class="icons">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link active" href="#"><img class="icon-btn" src="images/search.svg" alt="search"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html"><img class="icon-btn" src="images/wishlist.svg"
+                  alt="wishlist"></a>
+            </li>
+            <li class="nav-item cart">
+              <a class="nav-link" href="cart.html"><img class="icon-btn" src="images/basket.svg"
+                  alt="shopping cart"><span id="mycartcount" class="cart"></span></a>
+            </li>
+            <li class="nav-item user">
+              <a class="nav-link" href="login.html"><img class="icon-btn" src="images/no-user.svg" alt="user"></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
   <!--Main Navigation-->
-
 </header>
 <!--Header-->
 

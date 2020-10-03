@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Beautaholic</title>
+  <link rel="icon" href="images/fav-icon.png" type="image/gif" sizes="32x32">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
@@ -13,10 +14,28 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
     integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+
+
+
+
+<script type="text/javascript">
+
+// add the cart count to the cart
+var CurrentCart = JSON.parse(localStorage.getItem('myCart'));
+if(CurrentCart){
+var mycartcount = document.getElementById('mycartcount');
+if(mycartcount){
+  mycartcount.innerHTML = CurrentCart.length;
+  }
+}
+// add the cart count to the cart
+
+</script>
 </head>
 
 
 <body>
+
   <!--Header-->
   <header id="header">
     <!--Main Navigation-->
@@ -39,9 +58,9 @@
             <li class="nav-item">
               <a class="nav-link" href="categories.html">Categories</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="deals.html">Deals</a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="blog.html">Blog</a>
             </li>
@@ -61,10 +80,10 @@
               </li>
               <li class="nav-item cart">
                 <a class="nav-link" href="cart.html"><img class="icon-btn" src="images/basket.svg"
-                    alt="shopping cart"><span>0</span></a>
+                    alt="shopping cart"><span id="mycartcount" class="cart"></span></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.html"><img class="icon-btn" src="images/user.svg" alt="user"></a>
+              <li class="nav-item user">
+                <a class="nav-link" href="login.html"><img class="icon-btn" src="images/no-user.svg" alt="user"></a>
               </li>
             </ul>
           </div>
@@ -335,16 +354,6 @@
   <!-- footer end -->
 
 
-  <script src="js/index.js"></script>
-  <script src="js/category.js"></script>
-  
-  <!-- <script src="script.js"></script> -->
-
-  <!-- <script src="js/cart.js"></script> -->
-  <!-- <script src="js/login.js"></script> -->
-  
-
-
 
 <script type="text/javascript">
 //====================SPECIAL PRODUCTS ===============//
@@ -374,13 +383,13 @@ if(myJsonData){
                         <i class="fa fa-heart" aria-hidden="true"></i>
                       </button>
                       <button type="button" class="btn btn-secondary card-icons-item" title="Cart">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                         <a href="#mycartcount">  <i class="fa fa-shopping-cart" aria-hidden="true" id="${category.c_id}"></i> </a>
                       </button>
                     </div>
             
-                    <img src="${category.image}" />
+                    <img src="${category.image}" onclick="location.href='${category.productPageLink}';"/>
                   </div>
-                  <div class="product-bottom text-center">
+                  <div class="product-bottom text-center" onclick="location.href='${category.productPageLink}';">
                     <ul class="rating">
                       <li class="fa fa-star"></li>
                       <li class="fa fa-star"></li>
@@ -391,7 +400,7 @@ if(myJsonData){
                     <a href="${category.productPageLink}" data-tip="Quick View"><h4 class="card-heading">${category.name}</h4></a>
                     <h5 class="card-details">${category.desc}</h5>
                     <h6 class="card-price">Price:$${category.price}</h6>
-                    <a href="categories.html" onclick="document"><button id="shopnow-btn">View More</button></a>
+                    <button id="shopnow-btn">View More</button>
                   </div>
                 </div>`;
         break;
@@ -410,6 +419,12 @@ document.getElementById('specialproducts').innerHTML = products;
 
 
 </script>
+<script src="js/index.js"></script>
+<!-- <script src="script.js"></script> -->
+<script src="js/category.js"></script>
+<script src="js/cart2.js"></script>
+<script src="js/user.js"></script>
+
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
