@@ -1,18 +1,16 @@
-// function categorySelected(categoryType){
-//     console.log(categoryType);
-//     localStorage.setItem("categoryType" , JSON.stringify(categoryType));
-//     window.location.href ="categories.html";
-// }
 
 
 
 
-
-
-
-
-
-
+// add the cart count to the cart
+var CurrentCart = JSON.parse(localStorage.getItem('myCart'));
+if(CurrentCart){
+var mycartcount = document.getElementById('mycartcount');
+if(mycartcount){
+  mycartcount.innerHTML = CurrentCart.length;
+  }
+}
+// add the cart count to the cart
 
 
 
@@ -108,7 +106,7 @@ let jsonData = `{
           "name": "Tea-Tree Oil",
           "image": "images/products/08.jpg",
           "desc": "Suitable for blemished skin",
-          "type": "For blemished skin type",
+          "type": "For blemished skin",
           "price": 190,
           "productPageLink": "product-8.html"
         }
@@ -164,5 +162,69 @@ localStorage.setItem('myJson',jsonData);
 
 //=========load JSON to LOCAL STORAGE===============//
 
+
+
+
+//=========cart work===========================//
+let carts = document.querySelectorAll('.fa-shopping-cart');
+
+for (let i=0; i < carts.length; i++) {
+   carts[i].addEventListener('click', () => {
+     cartNumbers(carts[i].id);
+  })
+  
+}
+
+
+
+function cartNumbers(productid) {
+  //console.log("The product clicked is" , productid);
+
+
+let myJsonData = localStorage.getItem('myJson');
+let myCart = localStorage.getItem('myCart');
+
+let UpdatedCart = [];
+
+// this will insert exisitng cart data to array
+if(myCart){
+  _myCart = JSON.parse(myCart);
+  for (var i = 0; i < _myCart.length; i++) {
+    UpdatedCart.push(_myCart[i]);
+  }
+
+}
+// this will insert exisitng cart data to array
+
+
+if(myJsonData){
+  var data = JSON.parse(myJsonData);
+  for (let item of data.category) {
+    //console.log(item.subCategory); 
+    for (let category of item.subCategory) {
+       //console.log(category.name);
+
+       if(category.c_id == productid){
+
+        UpdatedCart.push(category);
+        //console.log(category);
+
+        }
+      }
+    }
+  }
+
+
+
+localStorage.setItem('myCart',JSON.stringify(UpdatedCart));
+
+var mycartcount = document.getElementById('mycartcount');
+if(mycartcount){
+  mycartcount.innerHTML = UpdatedCart.length;
+}
+//=======================cart work end===================//
+
+  
+}
 
 
